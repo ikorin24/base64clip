@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+
+# Convert base64-str into decoded-str and copy it to the clipboard.
+
+import pyperclip
+import base64
+import sys
+
+if len(sys.argv) < 1:
+  a = input('>>> ')
+else:
+  a = sys.argv[1]
+decoded = base64.b64decode(a.encode('utf-8'))
+decoded = str(decoded, 'utf-8')
+print(decoded)
+pyperclip.copy(decoded)
